@@ -17,5 +17,9 @@ steps:
   displayName: 'Checkout repository'
 
 - script: |
+    ./preReqs.sh
+  displayName: 'Get pre-reqs'
+
+- script: |
     ./build.sh
   displayName: 'Make buildroot'
