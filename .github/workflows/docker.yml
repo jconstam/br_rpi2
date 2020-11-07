@@ -19,4 +19,4 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          bash docker.sh ./ bash build.sh 
+          bash docker.sh bash build.sh 
