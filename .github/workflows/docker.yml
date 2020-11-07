@@ -15,7 +15,7 @@ jobs:
 
       - name: Build Container
         run: |
-          ./docker.sh BUILD
+          bash docker.sh BUILD
 
       - name: Checkout Buildroot
         run: |
@@ -23,4 +23,4 @@ jobs:
 
       - name: Build Buildroot
         run: |
-          ./docker.sh ./build.sh
+          bash docker.sh bash build.sh
