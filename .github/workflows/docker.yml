@@ -15,8 +15,8 @@ jobs:
 
       - name: Build Container
         run: |
-          bash docker.sh BUILD
+          ./docker.sh BUILD
 
       - name: Run a multi-line script
         run: |
-          bash docker.sh bash build.sh 
+          ./docker.sh ./build.sh
