@@ -17,6 +17,10 @@ jobs:
         run: |
           ./docker.sh BUILD
 
-      - name: Run a multi-line script
+      - name: Checkout Buildroot
+        run: |
+          git clone git://git.buildroot.net/buildroot
+
+      - name: Build Buildroot
         run: |
           ./docker.sh ./build.sh
