@@ -28,7 +28,8 @@ RUN apk add --no-cache \
     wget \
     git \
     ncurses \
-    ncurses-dev
+    ncurses-dev \
+    texinfo
 
 WORKDIR /buildroot
 VOLUME ["/buildroot"]
