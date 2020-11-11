@@ -11,7 +11,24 @@ RUN apk add --no-cache \
     libc-dev \
     bsd-compat-headers \
     bash \
-    binutils make gcc g++ patch gzip bzip2 perl cpio unzip rsync file bc wget git ncurses ncurses-dev
+    binutils \
+    linux-headers \
+    make \
+    gcc \
+    g++ \
+    patch \
+    gzip \
+    bzip2 \
+    perl \
+    cpio \
+    unzip \
+    rsync \
+    file \
+    bc \
+    wget \
+    git \
+    ncurses \
+    ncurses-dev
 
 WORKDIR /buildroot
 VOLUME ["/buildroot"]
