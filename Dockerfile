@@ -1,35 +1,23 @@
-# Download base image Alpine Linux 3.11
-FROM alpine:3.11
+# Download base image
+FROM ubuntu:20.04
 
 # LABEL about the custom image
-LABEL maintainer="jconstam@google.com"
-LABEL version="0.1"
-
-# Install most of the build tools
-RUN apk add --no-cache \
-    build-base \
-    libc-dev \
-    bsd-compat-headers \
-    bash \
-    binutils \
-    linux-headers \
-    make \
-    gcc \
-    g++ \
-    patch \
-    gzip \
-    bzip2 \
-    perl \
-    cpio \
-    unzip \
-    rsync \
-    file \
-    bc \
-    wget \
-    git \
-    ncurses \
-    ncurses-dev \
-    texinfo
+LABEL maintainer="jconstam@gmail.com"
+LABEL version="0.2"
 
 WORKDIR /buildroot
 VOLUME ["/buildroot"]
+
+# Install most of the build tools
+RUN apt-get update && \
+    apt-get install -y \
+        git \
+        build-essential \
+        wget \
+        cpio \
+        unzip \
+        rsync \
+        bc \
+        libncurses5-dev \
+        screen \
+        file
