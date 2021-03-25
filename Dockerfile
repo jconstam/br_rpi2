@@ -20,4 +20,5 @@ RUN apt-get update && \
         bc \
         libncurses5-dev \
         screen \
-        file
+        file \
+        python3
