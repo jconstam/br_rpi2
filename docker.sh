@@ -26,9 +26,11 @@ elif [ "$#" -eq 0 ]; then
     $DOCKER run -it --rm --mount src="${ROOT_PATH}",target=/buildroot,type=bind --name $NAME $IMAGE
     exit $?
 else
-    echo "Running image $IMAGE with command \"${@:2}\""
+    echo "Running image $IMAGE with command \"${@:1}\""
     echo ""
     echo "===== The image \"${IMAGE}\" is now running - Wait for the command to finish or press CTRL^C ====="
-    $DOCKER run --rm --mount src="${ROOT_PATH}",target=/buildroot,type=bind --name $NAME $IMAGE ${@:2}
+    export DOCKER_BUILDKIT=0
+    export COMPOSE_DOCKER_CLI_BUILD=0
+    $DOCKER run --rm --mount src="${ROOT_PATH}",target=/buildroot,type=bind --name $NAME $IMAGE ${@:1}
     exit $?
 fi

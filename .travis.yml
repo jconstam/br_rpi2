@@ -1,9 +1,0 @@
-language: cpp
-compiler: gcc
-dist: xenial
-
-install:
-  - ./preReqs.sh
-
-script:
-  - ./build.sh
